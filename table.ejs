@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela</title>
+  <style>
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    table, td, th {
+      border: 1px solid #000;
+      padding: 4px 6px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <% header.forEach(col => { %>
+          <th><%= col %></th>
+        <% }); %>
+      </tr>
+    </thead>
+    <tbody>
+      <% rows.forEach(row => { %>
+        <tr>
+          <% row.forEach(el => { %>
+            <td>
+              <%= el %>
+            </td>
+          <% }) %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
